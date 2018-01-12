@@ -12,8 +12,9 @@ $ projy <command> [sub-commands...] [arguments...] [options...]
 --version    - Print projy version
 --help       - Print projy help, either general help or on a specific command or sub-command
 --force      - Ignore preconditions or any validation
---skip-tests - Skip running tests where relevant
 --dry-run    - Skip non-reversable actions, print expected outcomes instead
+--skip-tests - Skip running tests where relevant
+--skip-push  - Skip pushing changes to the remote repository
 ```
 
 ### Commands
@@ -121,7 +122,7 @@ build:
 1. Build with unit tests (respects `--skip-tests`, `--dry-run`)
 1. Git commit with message: `"Set release version: <version>"` (respects `--dry-run`)
 1. Git tag: `<version>` (respects `--dry-run`)
-1. Git push, including tag (respects `--dry-run`)
+1. Git push, including tag (respects `--dry-run`, `--skip-push`)
 
 ##### Release Candidate
 
@@ -133,7 +134,7 @@ build:
 1. Build with unit tests (respects `--skip-tests`, `--dry-run`)
 1. Git commit with message: `"Set release candidate version: <version>-rc<number>"` (respects `--dry-run`)
 1. Git tag: `<version>-rc<number>` (respects `--dry-run`)
-1. Git push, including tag (respects `--dry-run`)
+1. Git push, including tag (respects `--dry-run`, `--skip-push`)
 
 ##### Snapshot Version
 1. Check preconditions: (respects `--force`)
@@ -141,5 +142,5 @@ build:
    1. Qualifier format: `[a-zA-Z0-9_-]+`
 1. Set project version: `<version>[-<qualifier>]-SNAPSHOT`
 1. Build with unit tests (respects `--skip-tests`, `--dry-run`)
-1. Git commit with message: `"Set release candidate version: <version>"` (respects `--dry-run`)
-1. Git push (respects `--dry-run`)
+1. Git commit with message: `"Set snapshot version: <version>"` (respects `--dry-run`)
+1. Git push (respects `--dry-run`, `--skip-push`)
