@@ -1,5 +1,7 @@
 # projy
-A utility for common tasks in a development project lifecycle
+[![Build Status](https://travis-ci.org/yinonavraham/projy.svg?branch=master)](https://travis-ci.org/yinonavraham/projy)  
+  
+A utility for common tasks in a development project lifecycle  
 
 ## Usage
 
