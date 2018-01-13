@@ -3,6 +3,7 @@ package version
 import (
 	"gopkg.in/urfave/cli.v1"
 	"fmt"
+	"github.com/yinonavraham/projy/flag"
 )
 
 func releaseCmd() cli.Command {
@@ -10,6 +11,13 @@ func releaseCmd() cli.Command {
 		Name: "release",
 		Usage: "Process a release version - set version, build, test, commit, tag and push",
 		ArgsUsage: "VERSION",
+		Flags: []cli.Flag {
+			flag.ForceFlag,
+			flag.DryRunFlag,
+			flag.SkipTestsFlag,
+			flag.SkipTagFlag,
+			flag.SkipPushFlag,
+		},
 		Action: func(ctx *cli.Context) error {
 			return releaseRun(ctx)
 		},

@@ -6,13 +6,13 @@ import (
 
 func Command() cli.Command {
 	return cli.Command {
-		Name: "version",
-		Usage: "Project version management commands",
-		Subcommands: SubCommands(),
+		Name:        "version",
+		Usage:       "Project version management commands",
+		Subcommands: subCommands(),
 	}
 }
 
-func SubCommands() []cli.Command {
+func subCommands() []cli.Command {
 	return []cli.Command {
 		releaseCmd(),
 		rcCmd(),

@@ -11,15 +11,20 @@ $ projy <command> [sub-commands...] [arguments...] [options...]
 ```
 --version    - Print projy version
 --help       - Print projy help, either general help or on a specific command or sub-command
---force      - Ignore preconditions or any validation
---dry-run    - Skip non-reversable actions, print expected outcomes instead
---skip-tests - Skip running tests where relevant
---skip-push  - Skip pushing changes to the remote repository
 ```
 
 ### Commands
 
 #### Project Versioning
+
+**Common Options:**  
+```
+--force      - Ignore preconditions or any validation
+--dry-run    - Skip non-reversable actions, print expected outcomes instead
+--skip-tests - Skip running tests where relevant
+--skip-tag   - Skip tagging the latest commit
+--skip-push  - Skip pushing changes to the remote repository
+```
 
 ##### Release Version
 
